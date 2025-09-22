@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mentorship_week_two/Modules/Global/global_screen.dart';
 
 import '../../../Utilites/theme_helper.dart';
 import '../../../generated/assets.dart';
 import '../../Details/details_screen.dart';
+import '../../Search/search_screen.dart';
 import '../../Settings/settings_screen.dart';
 import '../home_screen.dart';
 
@@ -142,14 +144,14 @@ class BottomNavBarItemModel {
     iconPath: Assets.imagesSearch,
     selectedIconPath: Assets.imagesSearch,
     title: "",
-    routeName: "",
+    routeName:SearchScreen.routeName,
     type: SelectedBottomNavBar.search,
   );
   static BottomNavBarItemModel global = BottomNavBarItemModel(
     iconPath: Assets.imagesGlobal,
     selectedIconPath: Assets.imagesGlobal,
     title:"",
-    routeName:"",
+    routeName:GlobalScreen.routeName,
     type: SelectedBottomNavBar.global,
   );
   static BottomNavBarItemModel settings = BottomNavBarItemModel(

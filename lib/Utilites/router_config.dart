@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mentorship_week_two/Utilites/theme_helper.dart';
 import '../Modules/Details/details_screen.dart';
+import '../Modules/Global/global_screen.dart';
 import '../Modules/Home/home_screen.dart';
+import '../Modules/Search/search_screen.dart';
 import '../Modules/Settings/settings_screen.dart';
 
 BuildContext? get currentContext_ => GoRouterConfig.router.routerDelegate.navigatorKey.currentContext;
@@ -29,6 +31,28 @@ class GoRouterConfig{
           return getCustomTransitionPage(
             state: state,
             child: const DetailsScreen(),
+          );
+        },
+        routes: const <RouteBase>[],
+      ),
+      GoRoute(
+        name: SearchScreen.routeName,
+        path: "/${SearchScreen.routeName}",
+        pageBuilder: (_, GoRouterState state) {
+          return getCustomTransitionPage(
+            state: state,
+            child: const SearchScreen(),
+          );
+        },
+        routes: const <RouteBase>[],
+      ),
+      GoRoute(
+        name: GlobalScreen.routeName,
+        path: "/${GlobalScreen.routeName}",
+        pageBuilder: (_, GoRouterState state) {
+          return getCustomTransitionPage(
+            state: state,
+            child: const GlobalScreen(),
           );
         },
         routes: const <RouteBase>[],

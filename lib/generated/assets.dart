@@ -10,8 +10,11 @@ class Assets {
   static const String imagesEllipseTwo = 'assets/images/ellipse_two.png';
   static const String imagesEye = 'assets/images/eye.svg';
   static const String imagesFiles = 'assets/images/files.png';
+  static const String imagesFire = 'assets/images/fire.svg';
   static const String imagesGlobal = 'assets/images/global.svg';
+  static const String imagesHandsClapping = 'assets/images/HandsClapping.svg';
   static const String imagesHome = 'assets/images/home.svg';
+  static const String imagesMovie = 'assets/images/movie.svg';
   static const String imagesMovieOne = 'assets/images/movie_one.png';
   static const String imagesMovieThree = 'assets/images/movie_three.png';
   static const String imagesMovieTwo = 'assets/images/movie_two.png';
@@ -20,5 +23,7 @@ class Assets {
   static const String imagesSetting = 'assets/images/setting.svg';
   static const String imagesStar = 'assets/images/star.svg';
   static const String imagesStopWatch = 'assets/images/stop_watch.svg';
+  static const String imagesVector = 'assets/images/Vector.svg';
+  static const String imagesWhiteEye = 'assets/images/whiteEye.svg';
 
 }
