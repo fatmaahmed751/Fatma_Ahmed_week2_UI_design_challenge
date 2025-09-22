@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mentorship_week_two/Modules/Global/global_screen.dart';
 
@@ -34,59 +35,87 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
     final itemWidth = screenWidth / BottomNavBarItemModel.screens.length;
     final selectedPosition = widget.selected.index * itemWidth;
 
-    return Stack(
-      children: [
-        // Main BottomNavigationBar Container
-        Container(
-          height: 72.h,
-          decoration: BoxDecoration(
-            color: ThemeClass.of(context).background,
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
-            boxShadow: [
-              BoxShadow(
-                color: ThemeClass.of(context).waiting,
-                blurRadius: 0.5,
-                spreadRadius: 0.5,
-              ),
-            ],
+    return  Container(
+      height: 73.h,
+      decoration: BoxDecoration(
+        color: ThemeClass.of(context).background,
+        boxShadow: [
+          BoxShadow(
+            color: ThemeClass.of(context).waiting,
+            blurRadius: 0.5,
+            spreadRadius: 0.5,
           ),
-          child: BottomNavigationBar(
-            backgroundColor: ThemeClass.of(context).background,
-            currentIndex: widget.selected.index,
-            type: BottomNavigationBarType.fixed,
-            selectedItemColor: ThemeClass.of(context).primaryColor,
-            unselectedItemColor: ThemeClass.of(context).secondaryBlackColor,
-            onTap: (index) {
-              context.pushNamed(BottomNavBarItemModel.screens[index].routeName);
-            },
-            items: BottomNavBarItemModel.screens.map((item) {
-              final isSelected = item.type == widget.selected;
-              return BottomNavigationBarItem(
-                icon: isSelected
-                    ? buildSelectedIcon(item, context)
-                    : buildUnselectedIcon(item, context),
-              label: "",
-              );
-            }).toList(),
-          ),
-        ),
-      ],
-    );
-  }
-
-
-  Widget buildSelectedIcon(BottomNavBarItemModel item, BuildContext context) {
-    return Center(
+        ],
+      ),
       child: Padding(
-        padding: EdgeInsetsDirectional.only(bottom: 0.h),
-        child: SvgPicture.asset(
-          item.selectedIconPath,
-          colorFilter: ColorFilter.mode(
-              ThemeClass.of(context).primaryColor, BlendMode.srcIn),
+        padding:  EdgeInsetsDirectional.only(start: 6.w,top: 6.h),
+        child: BottomNavigationBar(
+          backgroundColor: ThemeClass.of(context).background,
+          currentIndex: widget.selected.index,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: ThemeClass.of(context).primaryColor,
+          unselectedItemColor: ThemeClass.of(context).secondaryBlackColor,
+          onTap: (index) {
+            context.pushNamed(BottomNavBarItemModel.screens[index].routeName);
+          },
+          items: BottomNavBarItemModel.screens.map((item) {
+            final isSelected = item.type == widget.selected;
+            return BottomNavigationBarItem(
+              icon: isSelected
+                  ? buildSelectedIcon(item, context)
+                  : buildUnselectedIcon(item, context),
+              label: "",
+            );
+          }).toList(),
         ),
       ),
     );
   }
+  Widget buildSelectedIcon(BottomNavBarItemModel item, BuildContext context) {
+    if (item.type == SelectedBottomNavBar.home) {
+      return Container(
+        width: 95.w,
+        height: 27.h,
+       padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 0.h),
+        decoration: BoxDecoration(
+          color: ThemeClass.of(context).mainSecondary,
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SvgPicture.asset(
+              item.selectedIconPath,
+              width: 17.w,
+              height: 17.h,
+              colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            ),
+            Gap( 4.w),
+            Text(
+              "Home",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      );
+    } else {
+      return Padding(
+        padding: EdgeInsetsDirectional.only(top: 10.h),
+        child: SvgPicture.asset(
+          item.selectedIconPath,
+          colorFilter: ColorFilter.mode(
+            ThemeClass.of(context).primaryColor,
+            BlendMode.srcIn,
+          ),
+        ),
+      );
+    }
+  }
+
 
   Widget buildUnselectedIcon(BottomNavBarItemModel item, BuildContext context) {
     return Padding(
