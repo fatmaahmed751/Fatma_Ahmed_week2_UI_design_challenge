@@ -63,7 +63,7 @@ class GoRouterConfig{
         pageBuilder: (_, GoRouterState state) {
           return getCustomTransitionPage(
             state: state,
-            child: const SettingsScreen(),
+            child: buildScreenWithGradient( const SettingsScreen()),
           );
         },
         routes: const <RouteBase>[],

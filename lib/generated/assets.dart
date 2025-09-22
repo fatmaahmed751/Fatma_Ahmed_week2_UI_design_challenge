@@ -2,6 +2,8 @@
 class Assets {
   Assets._();
 
+  static const String imagesCancel = 'assets/images/cancel.png';
+  static const String imagesDarkElipse = 'assets/images/dark_elipse.svg';
   static const String imagesDemon = 'assets/images/demon.png';
   static const String imagesDemonMovie = 'assets/images/demon_movie.png';
   static const String imagesDetails = 'assets/images/details.svg';
@@ -22,7 +24,10 @@ class Assets {
   static const String imagesSearch = 'assets/images/search.svg';
   static const String imagesSetting = 'assets/images/setting.svg';
   static const String imagesStar = 'assets/images/star.svg';
+  static const String imagesStarOne = 'assets/images/star_one.png';
+  static const String imagesStarTwo = 'assets/images/star_two.png';
   static const String imagesStopWatch = 'assets/images/stop_watch.svg';
+  static const String imagesTickCircle = 'assets/images/tick-circle.svg';
   static const String imagesVector = 'assets/images/Vector.svg';
   static const String imagesWhiteEye = 'assets/images/whiteEye.svg';
 
