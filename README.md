@@ -1,3 +1,4 @@
 # mentorship_week_two
+#screenshots
 
-[Watch Demo Video](assets/videos/Record_2025-09-23-12-32-30.mp4)
+[Watch Demo Video](https://drive.google.com/drive/folders/1X3M9pP3bN19Py1s9fCuH2HbzB-QMLLfA?usp=drive_link)
