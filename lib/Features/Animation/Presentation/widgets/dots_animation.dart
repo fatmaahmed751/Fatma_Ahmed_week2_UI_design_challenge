@@ -20,12 +20,12 @@ class _LoadingDotsState extends State<LoadingDots>
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 800),
     )..repeat();
 
     _scaleAnimations = List.generate(3, (index) {
       final start = index * 0.2; // delay
-      final end = start + 0.4;   // active window
+      final end = start + 0.4 ;   // active window
       return Tween<double>(begin: 0.5, end: 1.2).animate(
         CurvedAnimation(
           parent: _controller,
@@ -66,6 +66,7 @@ class _LoadingDotsState extends State<LoadingDots>
               child: Opacity(
                 opacity: _opacityAnimations[index].value,
                 child: Container(
+                  margin: EdgeInsets.only(left: 3),
                   width: 20,
                   height: 20,
                   decoration: const BoxDecoration(
