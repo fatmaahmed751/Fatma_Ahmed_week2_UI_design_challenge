@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mentorship_week_two/Utilites/theme_helper.dart';
-import '../Modules/Details/details_screen.dart';
-import '../Modules/Global/global_screen.dart';
-import '../Modules/Home/home_screen.dart';
-import '../Modules/Search/search_screen.dart';
-import '../Modules/Settings/settings_screen.dart';
+import '../Features/Animation/Presentation/views/animation_screen.dart';
+import '../Features/Home/Presentation/views/home_screen.dart';
+import '../Features/MovieDetails/Presentation/views/details_screen.dart';
+import '../Features/Settings/presentation/views/settings_screen.dart';
+import '../Features/WidgetsCatalog/Prsentation/views/widgets_catalog.dart';
 
 BuildContext? get currentContext_ => GoRouterConfig.router.routerDelegate.navigatorKey.currentContext;
 class GoRouterConfig{
@@ -36,23 +36,23 @@ class GoRouterConfig{
         routes: const <RouteBase>[],
       ),
       GoRoute(
-        name: SearchScreen.routeName,
-        path: "/${SearchScreen.routeName}",
+        name: WidgetsCatalog.routeName,
+        path: "/${WidgetsCatalog.routeName}",
         pageBuilder: (_, GoRouterState state) {
           return getCustomTransitionPage(
             state: state,
-            child: const SearchScreen(),
+            child: const WidgetsCatalog(),
           );
         },
         routes: const <RouteBase>[],
       ),
       GoRoute(
-        name: GlobalScreen.routeName,
-        path: "/${GlobalScreen.routeName}",
+        name: AnimationScreen.routeName,
+        path: "/${AnimationScreen.routeName}",
         pageBuilder: (_, GoRouterState state) {
           return getCustomTransitionPage(
             state: state,
-            child: const GlobalScreen(),
+            child: const AnimationScreen(),
           );
         },
         routes: const <RouteBase>[],
